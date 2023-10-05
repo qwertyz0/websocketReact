@@ -32,3 +32,20 @@
   font-family: sans-serif;
   font-weight: bold;
 }
+
+.receive-msg{
+  margin-top: 25px;
+  font-family: sans-serif;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.mess-title{
+  margin-top: 20px;
+  font-family: sans-serif;
+  border: solid 2px;
+  padding: 5px;
+  background-color: grey;
+  border-radius: 5px;
+
+}
