@@ -25,8 +25,12 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log(`user ${socket.id} connected to server`);
 
+  socket.on("enter_room", (dataRoom) => {
+    socket.join(dataRoom);
+  });
+
   socket.on("send_message", (data) => {
-    socket.broadcast.emit("receive_message", data);
+    socket.to(data.room).emit("receive_message", data);
   });
 });
 
