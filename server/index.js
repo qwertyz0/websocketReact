@@ -25,11 +25,13 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log(`user ${socket.id} connected to server`);
 
+  // enter room function (join) socket.io
   socket.on("enter_room", (dataRoom) => {
     socket.join(dataRoom);
   });
 
   socket.on("send_message", (data) => {
+    // get object data with message and translate to all who join room (.to(data.room))
     socket.to(data.room).emit("receive_message", data);
   });
 });

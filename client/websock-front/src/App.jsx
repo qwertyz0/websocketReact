@@ -40,6 +40,7 @@ function App() {
     setMessage("");
   };
 
+  // enter room function with alert
   const enterRoom = () => {
     if (room !== "") {
       socket.emit("enter_room", room);
@@ -51,6 +52,7 @@ function App() {
     <div className="box">
       <div className="title">Websocket app</div>
       <div>
+        {/* enter room field */}
         <input
           value={room}
           onChange={(e) => setRoom(e.target.value)}
@@ -62,6 +64,7 @@ function App() {
           Enter room
         </button>
       </div>
+      {/* enter room field */}
       <input
         value={message}
         onChange={typingMessage}
